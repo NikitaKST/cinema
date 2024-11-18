@@ -241,7 +241,7 @@
             <img class="conf-step__movie-poster" alt="poster" src="{{ asset('/storage/' . $film->image) }}">
             <h3 class="conf-step__movie-title">{{ $film->title }}</h3>
             <p class="conf-step__movie-duration">{{ $film->duration }} минут</p>
-            <a href="{{ route('deleteFilm', $film->id) }}"><button class="conf-step__button conf-step__button-trash"></button></a>
+            <a href="{{ route('deleteFilm', $film->id) }}" class="deleteFilm"><button class="conf-step__button conf-step__button-trash"></button></a>
           </div>
           @endforeach
         </div>
@@ -256,7 +256,7 @@
                 @for($i = 0; $i < $el->count(); $i++)
                 <div class="conf-step__seances-movie" style="width: {{ $el[$i]->duration }}px; background-color: rgb(133, 255, 137); left: {{ $el[$i]->minute_start }}px;">
                   <p class="conf-step__seances-movie-title">{{ $el[$i]->name_film }}</p>
-                  <a href="{{ route('deleteSession', $el[$i]->id) }}"><button class="conf-step__button conf-step__button-trash" style="left: calc({{ $el[$i]->duration }}px - 30px);"></button></a>
+                  <a href="{{ route('deleteSession', $el[$i]->id) }}" class="deleteSession"><button class="conf-step__button conf-step__button-trash" style="left: calc({{ $el[$i]->duration }}px - 30px);"></button></a>
                   <p class="conf-step__seances-movie-start">{{ $el[$i]->session_start }}</p>
                 </div>
                 @endfor             
